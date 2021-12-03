@@ -1,6 +1,20 @@
+
 import React from 'react'
 import './css/banner.css';
+// import userrequest from './Request'
 function Banner() {
+    // const [movie, setMovie] = useState([]);
+
+    // useEffect(() =>{
+    //     async function fecthData(){
+    //         const request = await axios.get(userrequest.fetchNetflixOriginals);
+
+    //         //console.log(request.data.results)
+    //         setMovie(request.data.results);
+            
+    //     }
+    //     fecthData();
+    // },[])
     return (
         <div className="banner">
             <div className="banner__content">

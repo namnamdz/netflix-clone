@@ -1,4 +1,9 @@
 import React, {useEffect} from 'react';
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { login, logout, selectUser } from './features/userSlice';
 import Home from './Home';
@@ -26,15 +31,18 @@ function App() {
         dispatch(logout)
       }
     })
+    //console.log(user)
 
     return unsubcribe;
   },[])
   return (
     <>
-      {
-        !user ? (<Login />) 
-        : (<Home />)
-      }
+      <BrowserRouter>
+      <Routes>
+        <Route path="/" element={!user ? (<Login />) : (<Home />)}/>
+        <Route path="/logOut" element={<Login />}/>
+      </Routes>
+    </BrowserRouter>
       
     </>
   );
